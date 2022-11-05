@@ -1,0 +1,32 @@
+.login_container {
+    height: 100vh;
+}
+
+.login_form {
+    height: 500px;
+    width: 500px;
+}
+
+.form_body {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 32px;
+}
+
+.full-width {
+    grid-column: span 12;
+}
+
+.fields {
+    height: 0px;
+}
+
+.buttons {
+    width: 250px;
+    height: 50px;
+}
+
+.error {
+    color: rgb(235, 47, 47);
+    font-weight: 700;
+}

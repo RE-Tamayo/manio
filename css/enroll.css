@@ -1,0 +1,53 @@
+.form_body {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1rem;
+}
+
+.buttons {
+    width: 250px;
+    height: 50px;
+}
+
+
+.col1 {
+    grid-column: span 1;
+}
+.col2 {
+    grid-column: span 2;
+}
+.col3 {
+    grid-column: span 3;
+}
+.col4 {
+    grid-column: span 4;
+}
+.col5 {
+    grid-column: span 5;
+}
+.col6 {
+    grid-column: span 6;
+}
+.col7 {
+    grid-column: span 7;
+}
+.col8 {
+    grid-column: span 8;
+}
+.col9 {
+    grid-column: span 9;
+}
+.col10 {
+    grid-column: span 10;
+}
+.col11 {
+    grid-column: span 11;
+}
+.col12 {
+    grid-column: span 12;
+}
+
+.error {
+    color: rgb(235, 47, 47);
+    font-weight: 700;
+}
