@@ -8,9 +8,12 @@
 
 
     if(isset($_POST['submit'])) {
+        if(!isset($_SESSION)) {
+            session_start();
+        }
         $username = $_POST['uname'];
         $pwd = $_POST['pwd'];
-
+        
         $query = 'INSERT INTO student_acc SET username = :username, pwd = :pwd';
 
         $stmt = $conn->prepare($query);
@@ -24,11 +27,11 @@
         if($stmt->execute()) {
             header("Location: ../student/student_login.php?status=Success");
             exit();
-        } else {
-            header("Location: ../student/student_login.php?error=Something went wrong.");
-            exit();
         }
-
+    } else {
+        header("Location: ../student/student_login.php?error=Something went wrong.");
+        exit();
     }
+
 
     

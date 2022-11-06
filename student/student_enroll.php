@@ -1,3 +1,30 @@
+<?php
+    
+    if(!isset($_SESSION)) {
+        session_start();
+
+        if(isset($_SESSION['status'])) {
+            if($_SESSION['status']  !== true) {
+                header("Location: student_login.php?error=Please log in first.");
+                exit();
+            }
+        } else {
+            header("Location: student_login.php?error=Please log in first.");
+            exit();
+        }
+        
+        if(isset($_SESSION['type'])) {
+            if($_SESSION['type'] !== "user") {
+                header("Location: student_login.php?error=Please log in first.");
+                exit();
+            }
+        } else {
+            header("Location: student_login.php?error=Please log in first.");
+            exit();
+        }
+    }
+    
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,6 +88,8 @@
                 <input class="col4 form-control" type="text" name="father" placeholder="Father's Full Name" required>
                 <input class="col4 form-control" type="text" name="father_occupation" placeholder="Father's Occupation" required>
                 <input class="col4 form-control" type="text" name="father_phone" placeholder="Father's Contact Number" required>
+                <input class="form-control" type="hidden" name="enrollment_status" value="Not Enrolled">
+                <input class="form-control" type="hidden" name="section" value="None">
                 <div class="col12 d-flex justify-content-center mt-4"><button class="buttons btn btn-success" type="submit" name="enroll">Enroll</button></div>
             </form>
         </div>

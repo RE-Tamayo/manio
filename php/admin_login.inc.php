@@ -6,7 +6,6 @@
 
     $conn = $db->connect();
 
-
     if(isset($_POST['submit'])) {
         $username = $_POST['uname'];
         $password = $_POST['pwd'];
@@ -27,7 +26,7 @@
             $_SESSION['name'] = $data['username'];
             $_SESSION['status'] = true;
             $_SESSION['type'] = "admin";
-            header("Location: ../admin/admin_dashboard.php");
+            header("Location: ../admin/admin_dashboard.php?currentTab=1");
             exit();
         } else {
             header("Location: ../admin/admin_login.php?error=Wrong username or password.");

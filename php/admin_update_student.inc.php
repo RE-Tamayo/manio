@@ -10,7 +10,7 @@
         if(!isset($_SESSION)) {
             session_start();
         }
-        $user_id = $_SESSION['id'];
+        $user_id = $_GET['id'];
         $fname = $_POST['fname'];
         $mname = $_POST['mname'];
         $lname = $_POST['lname'];
@@ -147,10 +147,11 @@
         $stmt->bindParam(':section', $section);
       
         if($stmt->execute()) {
-            header("Location: ../student/student_dashboard.php?status=Success");
+            header("Location: ../admin/manage_student.php?id=".$user_id."&status=Success");
             exit();
+            
         } else {
-            header("Location: ../student/student_dashboard.php?error=Something went wrong.");
+            header("Location: ../admin/manage_student.php?id=".$user_id."&error=Something went wrong.");
             exit();
         }
     }
